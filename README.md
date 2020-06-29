@@ -1,0 +1,2 @@
+# Stock-Market-Prediction
+The aim of this project is to predict and compare the future value of the financial stocks of big companies- Apple, GE, Google, IBM, and Microsoft so that the user can easily invest in those companies stocks’ which are going to make profits in the upcoming future. For this machine learning is used to make prediction based on the data of current stock market indices by training on their previous data values. 
