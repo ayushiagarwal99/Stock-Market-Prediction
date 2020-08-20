@@ -12,7 +12,6 @@ from sklearn import preprocessing
 from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.linear_model import Ridge
-from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
 from pandas.util.testing import assert_frame_equal
@@ -99,16 +98,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
 clfreg = LinearRegression(n_jobs=-1)
 clfreg.fit(X_train,y_train)
 
-# Quadratic Regression 2
-clfpoly2 = make_pipeline(PolynomialFeatures(2), Ridge())
+# Multi Linear regression
+clfpoly2 = LinearRegression()
 clfpoly2.fit(X_train, y_train)
 
-# Quadratic Regression 3
-clfpoly3 = make_pipeline(PolynomialFeatures(3), Ridge())
-clfpoly3.fit(X_train, y_train)
-
 # KNN Regression
-clfknn = KNeighborsRegressor(n_neighbors=2)
+clfknn = KNeighborsRegressor(n_neighbors=5)
 clfknn.fit(X_train, y_train)
 
 confidencereg = clfreg.score(X_test, y_test)
